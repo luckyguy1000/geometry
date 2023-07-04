@@ -1,5 +1,21 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+triangle_show:
+  path: /triangle/{a}/{b}/{c}
+  controller: App\Controller\TriangleController::show
+  methods: GET|HEAD
+  requirements:
+    a: '^[0-9]+\.?[0-9]*$'
+    b: '^[0-9]+\.?[0-9]*$'
+    c: '^[0-9]+\.?[0-9]*$'
+
+circle_show:
+  path: /circle/{radius}
+  controller: App\Controller\CircleController::show
+  methods: GET|HEAD
+  requirements:
+    radius: '^[0-9]+\.?[0-9]*$'
